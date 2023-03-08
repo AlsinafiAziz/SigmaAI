@@ -17,28 +17,28 @@ const openai = new OpenAIApi (configuration);
 
 const app = express();
 
-app.use(function(req, res, next) {
+app.use(function(req, _res, next) {
     console.log(req.method + ' ' + req.originalUrl);
     next();
   });
 
-app.use(function (req, res, next) {
+app.use(function (_req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
  })
-const cors = require('cors')
+
 
 app.use(cors());
 
-app.use((req, res, next) => {
+app.use((_req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   });
 app.use(express.json());
 
 
-app.get('/', async (req, res) => {
+app.get('/', async (_req, res) => {
     res.status(200).send({
         message: 'Hello from SigmaAI' ,
     })
