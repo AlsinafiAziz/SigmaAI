@@ -3,10 +3,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
-app.use(function(req, res, next) {
-    console.log(req.method + ' ' + req.originalUrl);
-    next();
-  });
+
 
 dotenv.config();
 
@@ -19,6 +16,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi (configuration);
 
 const app = express();
+
+app.use(function(req, res, next) {
+    console.log(req.method + ' ' + req.originalUrl);
+    next();
+  });
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
