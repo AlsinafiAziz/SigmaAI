@@ -29,7 +29,7 @@ app.use(function (_req, res, next) {
  })
 
 
-app.use(cors());
+app.use(cors({origin: '*'}));
 
 app.use((_req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
