@@ -14,16 +14,17 @@ const configuration = new Configuration({
 const openai = new OpenAIApi (configuration);
 
 const app = express();
-app.use(cors({
-    origin: 'https://sigma-ai.vercel.app'
-  }));
-app.use(express.json());
-
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://sigma-ai.vercel.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
+
+app.use(cors({
+    origin: 'https://sigma-ai.vercel.app'
+  }));
+app.use(express.json());
+
 
 app.get('/', async (req, res) => {
     res.status(200).send({
