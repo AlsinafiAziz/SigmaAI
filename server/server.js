@@ -3,6 +3,11 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
+app.use(function(req, res, next) {
+    console.log(req.method + ' ' + req.originalUrl);
+    next();
+  });
+
 dotenv.config();
 
 
@@ -48,6 +53,8 @@ app.post('/', async (req, res) => {
         res.status(200).send({
             bot: response.data.choices[0].text
         })
+        console.log(`Bot Response: ${response}`);
+
     } catch (error) {
         console.error(error);
         res.status(500).send({ error })

@@ -105,6 +105,8 @@ const handleSubmit = async (e) => {
 
 
     typeText(messageDiv, parsedData);
+
+    console.log(`Bot Response: ${parsedData}`);
   } else {
     const err = await response.text();
 
