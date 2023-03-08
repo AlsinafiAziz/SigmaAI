@@ -1,5 +1,5 @@
 import express from 'express';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
@@ -33,7 +33,7 @@ app.post('/', async (req, res) => {
             model: "text-davinci-003",
             prompt: `${prompt}`,
             temperature: 0,
-            max_tokens: 3000,
+            max_tokens: 2300,
             top_p: 1,
             frequency_penalty: 0.5,
             presence_penalty: 0,
@@ -48,5 +48,8 @@ app.post('/', async (req, res) => {
 
     }
 })
+const PORT = process.env.PORT || 5000;
 
-app.listen(5000, () => console.log('Server is running on port http://localhost:5000'));
+app.listen(PORT, () =>
+    console.log(`Server is running on port http://localhost:${PORT}`)
+    );
