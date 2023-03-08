@@ -29,6 +29,11 @@ app.use(function (req, res, next) {
  })
 
 app.use(cors());
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
 app.use(express.json());
 
 

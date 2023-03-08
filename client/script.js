@@ -86,8 +86,9 @@ const handleSubmit = async (e) => {
 
   // fetch data from server -> bot's response 
 
-  const response = await fetch('https://sigmaai.onrender.com', {mode:'cors'}, { 
+  const response = await fetch('https://sigmaai.onrender.com', { 
     method: 'POST',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
