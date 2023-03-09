@@ -7,6 +7,9 @@ import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();
 
+const headers = {
+    'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`,
+  };
 
 const configuration = new Configuration({
     apiKey: "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",
