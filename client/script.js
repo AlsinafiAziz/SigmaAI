@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
     mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': Bearer "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"
+      'Authorization': "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"
     },
     body: JSON.stringify({
       prompt: data.get('prompt')
