@@ -9,7 +9,7 @@ dotenv.config();
 
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
     
 }); 
 
