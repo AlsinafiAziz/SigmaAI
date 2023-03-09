@@ -12,7 +12,7 @@ const headers = {
   };
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
     
 }); 
 
